@@ -3,23 +3,29 @@ package no1;
 import java.util.Scanner;
 
 public class No1 {
+    static void reverseFibonacci(int n) 
+    { 
+        int a[] = new int[n]; 
+      
+        // assigning first and second elements 
+        a[0] = 1; 
+        a[1] = 1; 
+      
+        for (int i = 2; i < n; i++) 
+        { 
+            a[i] = a[i - 2] + a[i - 1]; 
+        } 
+      
+        for (int i = n - 1; i >= 0; i--)  
+        {
+            System.out.print(a[i] +" "); 
+        } 
+    } 
+    
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int i = 1, t1 = 1, t2 = 1;
         System.out.print("Input : ");
         int in = scan.nextInt();
-        
-        System.out.println("Output : ");
-
-        while (i <= in)
-        {
-            System.out.print(t1 + " ");
-
-            int sum = t1 + t2;
-            t1 = t2;
-            t2 = sum;
-
-            i++;
-        }
+        reverseFibonacci(in);
     }
 }
